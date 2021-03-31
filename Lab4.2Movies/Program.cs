@@ -4,11 +4,24 @@ using System.Collections.Generic;
 namespace Lab4._2Movies
 {
 
-
     public class Movie
     {
-        public string category;
-        public string title;
+        private string category;
+        private string title;
+
+
+        public string MovieCategory()
+        {
+
+            return category;
+        }
+
+        public string MovieTitle()
+        {
+
+            return title;
+        }
+
 
         public Movie(string acategory, string atitle)
         {
@@ -54,9 +67,9 @@ namespace Lab4._2Movies
                     foreach (var movieList in movies)
                     {
 
-                        if (movieList.category.Equals(userSelection, StringComparison.OrdinalIgnoreCase))
+                        if (movieList.MovieCategory().Equals(userSelection, StringComparison.OrdinalIgnoreCase))
                         {
-                            Console.WriteLine($"{movieList.title}");
+                            Console.WriteLine($"{movieList.MovieTitle()}");
                             contloop = false;
                            
                         }                        
@@ -64,7 +77,7 @@ namespace Lab4._2Movies
                     }
                     if(contloop == true)
                     {
-                        Console.WriteLine("That category does not exist");
+                        Console.WriteLine("That category does not exist. Please select Scifi, Horror, Animated, or Drama. ");
                     }
 
                 } while (contloop);
@@ -92,7 +105,7 @@ namespace Lab4._2Movies
                     }
                     else
                     {
-                       Console.WriteLine("Please enter a valid selection");
+                       Console.WriteLine("Please enter a valid selection.");
                         shouldContinue = true;
                     }
 
